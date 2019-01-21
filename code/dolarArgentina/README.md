@@ -24,3 +24,5 @@ $ spark-submit --master 'spark://master:7077' \
 --total-executor-cores 3 \
 target/scala-2.11/DolarArgentina-assembly-0.1.jar
 ```
+
+### To visualize the ETL result open then index.html file in a browser
