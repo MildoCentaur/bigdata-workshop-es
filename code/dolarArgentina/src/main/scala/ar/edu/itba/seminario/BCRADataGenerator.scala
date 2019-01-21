@@ -43,7 +43,7 @@ object GenerateData {
     def readDataAndStoreInDatabase(spark: SparkSession, strTable: String, strUrl: String) = {
       println(s"""Reading data from BCRA api""".stripMargin)
       println(s"Requesting ${strTable}")
-      
+
       val request = url(strUrl).GET
       val builtRequest = request.addHeader("Authorization", API_KEY)
         .addHeader("Accept", "application/json")
