@@ -13,15 +13,12 @@ object DolarETLProcessor{
     val pricesTableName = "BCRA_PRICES"
     val pricesOficialTableName = "BCRA_PRICES_OFICIAL"
     val eventsTableName = "BCRA_EVENTS"
-    val reservasTableName = "BCRA_RESERVAS"
+
 
     val spark = SparkSession.
       builder.
       appName("BCRA-Dolar:ETL").
       getOrCreate()
-
-    //execute as
-    //spark-submit --master 'spark://master:7077'   --class "ar.edu.itba.seminario.DolarETLProcessor"   --total-executor-cores 3 target/scala-2.11/openweather-assembly-0.1.jar
 
     val prices = PostgresUtils.readTable(spark, pricesTableName)
       .withColumnRenamed("fecha", "date_price")
@@ -73,7 +70,7 @@ object DolarETLProcessor{
 
 
     println(s"ETL process comlete")
-    // spark.stop()
+
   }
 
 }

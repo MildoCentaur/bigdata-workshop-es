@@ -43,7 +43,7 @@ object GenerateData {
     def readDataAndStoreInDatabase(spark: SparkSession, strTable: String, strUrl: String) = {
       println(s"""Reading data from BCRA api""".stripMargin)
       println(s"Requesting ${strTable}")
-      //Extracted from http://krishnabhargav.github.io/scala,/how/to/2014/06/15/Scala-Json-REST-Example.html
+      
       val request = url(strUrl).GET
       val builtRequest = request.addHeader("Authorization", API_KEY)
         .addHeader("Accept", "application/json")
